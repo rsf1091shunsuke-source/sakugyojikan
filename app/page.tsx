@@ -1,4 +1,3 @@
-"use client";
 import { useState, useMemo } from "react";
 
 const MODULES = ["M-01", "M-02", "M-03", "M-04", "M-05", "M-06", "M-07", "M-08"];
@@ -25,7 +24,7 @@ function minutesToTime(mins: number): string {
   return `${h}:${String(m).padStart(2, "0")}`;
 }
 
-function TimeInput({ value, onChange }) {
+function TimeInput({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   const [focused, setFocused] = useState(false);
   return (
     <input
@@ -53,7 +52,7 @@ function TimeInput({ value, onChange }) {
   );
 }
 
-function MiniBar({ value, max, color }) {
+function MiniBar({ value, max, color }: { value: number; max: number; color: string }) {
   const pct = max > 0 ? Math.min((value / max) * 100, 100) : 0;
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
