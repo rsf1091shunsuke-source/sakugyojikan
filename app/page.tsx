@@ -1,4 +1,3 @@
-"use client";
 import { useState, useMemo } from "react";
 
 const MODULES = ["M-01", "M-02", "M-03", "M-04", "M-05", "M-06", "M-07", "M-08"];
@@ -9,7 +8,7 @@ const PROCESS_COLORS = {
   組立: "#5cbd8a",
 };
 
-function timeToMinutes(timeStr: string) {
+function timeToMinutes(timeStr: string): number {
   if (!timeStr || timeStr === "0:00" || timeStr === "") return 0;
   const parts = timeStr.split(":");
   if (parts.length !== 2) return 0;
@@ -18,7 +17,7 @@ function timeToMinutes(timeStr: string) {
   return h * 60 + m;
 }
 
-function minutesToTime(mins) {
+function minutesToTime(mins: number): string {
   if (!mins || mins === 0) return "0:00";
   const h = Math.floor(mins / 60);
   const m = mins % 60;
