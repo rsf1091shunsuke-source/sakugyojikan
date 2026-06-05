@@ -1,3 +1,4 @@
+"use client";
 import { useState, useMemo } from "react";
 
 const MODULES = ["M-01", "M-02", "M-03", "M-04", "M-05", "M-06", "M-07", "M-08"];
