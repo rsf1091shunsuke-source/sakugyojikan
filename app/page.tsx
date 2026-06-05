@@ -9,7 +9,7 @@ const PROCESS_COLORS = {
   組立: "#5cbd8a",
 };
 
-function timeToMinutes(timeStr) {
+function timeToMinutes(timeStr: string) {
   if (!timeStr || timeStr === "0:00" || timeStr === "") return 0;
   const parts = timeStr.split(":");
   if (parts.length !== 2) return 0;
